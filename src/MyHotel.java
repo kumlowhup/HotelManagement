@@ -49,11 +49,9 @@ class Room{
 
     @Override
     public String toString() {
-        String isVacant = "客 " ;
 
-        if(isFree) isVacant = "空 " ;
+        return  attribute + number + " " + ( isFree ? "客 " : "空 " );
 
-        return  attribute + number + " " + isVacant;
     }
 
     //改变房间空房/有客的状态
