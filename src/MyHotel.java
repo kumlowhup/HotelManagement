@@ -12,6 +12,7 @@ public class MyHotel {
 
     }
 
+
     public static void printRooms(Object hotel[][]){
         for (int i = 0 ;i < hotel.length ;i++){
             for(int j = 0;j < hotel[i].length ;j++){
@@ -27,6 +28,9 @@ public class MyHotel {
 class Room{
     int number;
     String attribute;
+
+    //true表示空房，否则为有客
+
     boolean isFree = true;
 
     public Room(int i,int j) {
@@ -50,5 +54,10 @@ class Room{
         if(isFree) isVacant = "空 " ;
 
         return  attribute + number + " " + isVacant;
+    }
+
+    //改变房间空房/有客的状态
+    public void setFree() {
+        isFree = !isFree;
     }
 }
