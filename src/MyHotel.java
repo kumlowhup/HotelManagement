@@ -3,13 +3,9 @@ import java.util.Objects;
 public class MyHotel {
 
     public static void main(String[] args) {
-        Room[][] hotel = new Room[5][10];
-        for (int i = 0 ;i < hotel.length ;i++){
-            for(int j = 0;j < hotel[i].length ;j++){
-                hotel[i][j] = new Room(i,j);
-            }
-        }
-        printRooms(hotel);
+
+        Hotel hotel = new Hotel();
+        printRooms(hotel.getRooms());
 
 
     }
@@ -72,5 +68,6 @@ class Room{
     //改变房间空房/有客的状态
     public void setFree() {
         status = !status;
+        System.out.println("房间" + number + "已经" + (status ? "订" : "退" ) + "房");
     }
 }
