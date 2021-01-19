@@ -31,7 +31,7 @@ class Room{
 
     //true表示空房，否则为有客
 
-    boolean isFree = true;
+    boolean status = true;
 
     public Room(int i,int j) {
         this.number = ( i + 1 ) * 100 + j + 1;
@@ -50,12 +50,12 @@ class Room{
     @Override
     public String toString() {
 
-        return  attribute + number + " " + ( isFree ? "客 " : "空 " );
+        return  attribute + number + " " + ( status ? "客 " : "空 " );
 
     }
 
     //改变房间空房/有客的状态
     public void setFree() {
-        isFree = !isFree;
+        status = !status;
     }
 }
