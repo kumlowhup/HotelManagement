@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class MyHotel {
 
     public static void main(String[] args) {
@@ -42,7 +44,7 @@ class Room{
             case 3 :attribute = "情侣套房";break;
             case 4 :attribute = "总统套房";break;
             default:
-                throw new IllegalStateException("房间信息错误\n" + "Unexpected value: " + i);
+                throw new IllegalStateException("房间信息错误！\nUnexpected value: " + i);
         }
     }
 
@@ -52,6 +54,19 @@ class Room{
 
         return  attribute + number + " " + ( status ? "客 " : "空 " );
 
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        return number == room.number;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
     }
 
     //改变房间空房/有客的状态
