@@ -1,5 +1,5 @@
 public class Hotel {
-    private String name;
+    private String name = "Java大酒店";
     private Room[][] rooms;
 
     public Room[][] getRooms() {
