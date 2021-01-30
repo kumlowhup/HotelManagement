@@ -7,10 +7,22 @@ public class Hotel {
     }
 
     public void booking(int i) {
-        rooms[i / 100 - 1][i % 100 - 1].booking();
+
+        Room thisroom = rooms[i / 100 - 1][i % 100 - 1];
+        if(!thisroom.status){
+            System.out.println("订房失败，" + thisroom + "已经被占用！");
+            return;
+        }
+        thisroom.booking();
     }
 
     public void exiting(int i) {
+
+        Room thisroom = rooms[i / 100 - 1][i % 100 - 1];
+        if(thisroom.status){
+            System.out.println(thisroom + "已经是空房！");
+            return;
+        }
         rooms[i / 100 - 1][i % 100 - 1].exiting();
     }
 
